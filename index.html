@@ -40,6 +40,14 @@
                 gap: 20px;
                 padding: 20px 60px;
             }
+            
+            #skeeronskede-container {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+                padding: 20px 60px;
+            }
+
 
             .skee {
                 border: 1px solid #ece5cc;
@@ -52,7 +60,7 @@
                     transform 0.2s,
                     box-shadow 0.2s;
             }
-            
+
             p {
                 font-size: 20px;
                 font-weight: 700;
@@ -73,13 +81,18 @@
                 margin-bottom: 10px;
                 border-radius: 4px;
             }
-            
         </style>
     </head>
     <body>
         <header>Dine Juleskeer</header>
 
         <div id="skeer-container"></div>
+
+        <hr style="margin: 50px 0; border: 1px solid #ccc" />
+        <h2 style="text-align: center; font-family: &quot;Playfair Display&quot;, serif; font-size: 28px">
+            Ønskede skeer
+        </h2>
+        <div id="skeeronskede-container"></div>
 
         <script src="script.js"></script>
     </body>
