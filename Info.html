@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="da">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Skee Info</title>
+
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+
+        <link rel="stylesheet" href="style.css" />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                background-color: #f5f5f5;
+            }
+
+            /* Sticky header */
+            header {
+                position: sticky;
+                top: 0;
+                background-color: #faefc3; /* Lys gylden farve */
+                padding: 20px;
+                text-align: center;
+                font-size: 28px;
+                font-weight: 700;
+                font-family: "Playfair Display", serif; /* Fancy font */
+                color: white; /* Hvid tekst */
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* <-- her er skyggen */
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                z-index: 100;
+            }
+
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 40px;
+                padding: 40px 60px;
+                flex-wrap: wrap; /* gør det responsivt på små skærme */
+            }
+
+            .info-box {
+                background-color: #fff;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                max-width: 400px;
+                flex: 1;
+            }
+
+            .info-box h2 {
+                font-family: "Playfair Display", serif;
+                margin-top: 0;
+                margin-bottom: 15px;
+            }
+
+            .info-box p {
+                margin: 8px 0;
+                line-height: 1.5;
+            }
+
+            #ske-billede {
+                max-width: 200px;
+                width: 100%;
+                width: auto;
+                border-radius: 10px;
+                flex: 1;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .back-button {
+                display: inline-block;
+                margin-top: 20px;
+                padding: 10px 20px;
+                background-color: #faefc3;
+                color: white;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                font-weight: bold;
+                transition:
+                    transform 0.2s,
+                    box-shadow 0.2s;
+            }
+
+            .back-button:hover {
+                transform: scale(1.05);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            @media (max-width: 900px) {
+                .container {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .info-box,
+                #ske-billede {
+                    max-width: 90%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>Dine Juleskeer</header>
+
+        <div class="container">
+            <div class="info-box">
+                <h2 id="ske-navn"></h2>
+                <p><strong>Titel:</strong> <span id="ske-titel"></span></p>
+                <p><strong>Lavede af:</strong> <span id="ske-lavet"></span></p>
+                <p id="ske-info"></p>
+                <button class="back-button" onclick="window.history.back()">← Tilbage</button>
+            </div>
+            <img id="ske-billede" src="" alt="" />
+        </div>
+
+        <script>
+            const skee = JSON.parse(localStorage.getItem("valgtSkee"));
+            if (skee) {
+                document.getElementById("ske-navn").textContent = skee.navn;
+                document.getElementById("ske-billede").src = skee.billede;
+                document.getElementById("ske-info").textContent = skee.info;
+                document.getElementById("ske-titel").textContent = skee.titel || "Ukendt";
+                document.getElementById("ske-lavet").textContent = skee.lavetAf || "Ukendt";
+            } else {
+                document.getElementById("ske-navn").textContent = "Ingen ske valgt!";
+            }
+        </script>
+    </body>
+</html>
