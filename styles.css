@@ -1,3 +1,31 @@
-.title {
-    color: green;
-}
+ body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            #skeer-container {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+
+            .skee {
+                border: 1px solid #ccc;
+                padding: 10px;
+                text-align: center;
+                cursor: pointer;
+                transition: transform 0.2s;
+            }
+
+            .skee:hover {
+                transform: scale(1.05);
+            }
+
+            .skee img {
+                width: 100px;
+                height: auto;
+            }
