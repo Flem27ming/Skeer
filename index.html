@@ -1,15 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="da">
     <head>
         <meta charset="UTF-8" />
-        <title>Title</title>
-        <link rel="stylesheet" href="styles.css" />
-        <script src="script.js"></script>
+        <title>Min mors juleskeer</title>
+        <link rel="stylesheet" href="style.css" />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            #skeer-container {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+
+            .skee {
+                border: 1px solid #ccc;
+                padding: 10px;
+                text-align: center;
+                cursor: pointer;
+                transition: transform 0.2s;
+            }
+
+            .skee:hover {
+                transform: scale(1.05);
+            }
+
+            .skee img {
+                height: 250px; /* Alle billeder får samme højde */
+                width: auto; /* Bredden justeres automatisk for at bevare proportioner */
+                object-fit: contain;
+            }
+        </style>
     </head>
     <body>
-        <h1 class="title">Hello World</h1>
-        <div id="mainDiv">Hello Div</div>
-        <br />
-        <button onclick="buttonClicked()">Click me</button>
+        <h1>Min mors juleskeer af A. Michelsen</h1>
+        <div id="skeer-container"></div>
+
+        <script src="script.js"></script>
     </body>
 </html>
