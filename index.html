@@ -34,20 +34,23 @@
                 z-index: 100;
             }
 
-            #skeer-container {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 20px;
-                padding: 20px 60px;
-            }
-            
+            #skeer-container,
             #skeeronskede-container {
                 display: grid;
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(4, 1fr); /* Standard: 4 kolonner */
                 gap: 20px;
                 padding: 20px 60px;
             }
 
+
+            /* Mobil */
+            @media (max-width: 500px) {
+                #skeer-container,
+                #skeeronskede-container {
+                    grid-template-columns: repeat(2, 1fr); /* 2 kolonne */
+                    padding: 10px 20px;
+                }
+            }
 
             .skee {
                 border: 1px solid #ece5cc;
