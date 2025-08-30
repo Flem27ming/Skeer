@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <title>Skee Info</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <!-- Google Font -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -102,6 +103,28 @@
                     max-width: 90%;
                 }
             }
+            /* Mobil (små telefoner) */
+            @media (max-width: 500px) {
+                .info-box {
+                    font-size: 16px; /* lidt mindre end tablet, men stadig læsbar */
+                    padding: 15px;
+                }
+
+                #ske-billede {
+                    max-width: 100%;
+                    height: auto;
+                }
+
+                header {
+                    font-size: 24px;
+                    padding: 15px;
+                }
+
+                .back-button {
+                    padding: 10px 20px;
+                    font-size: 15px;
+                }
+            }
         </style>
     </head>
     <body>
@@ -111,7 +134,7 @@
             <div class="info-box">
                 <h2 id="ske-navn"></h2>
                 <p><strong>Titel:</strong> <span id="ske-titel"></span></p>
-                <p><strong>Lavede af:</strong> <span id="ske-lavet"></span></p>
+                <p><strong>Lavet af:</strong> <span id="ske-lavet"></span></p>
                 <p id="ske-info"></p>
                 <button class="back-button" onclick="window.history.back()">← Tilbage</button>
             </div>
