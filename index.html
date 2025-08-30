@@ -3,44 +3,82 @@
     <head>
         <meta charset="UTF-8" />
         <title>Min mors juleskeer</title>
+
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+
         <link rel="stylesheet" href="style.css" />
         <style>
             body {
                 font-family: Arial, sans-serif;
-                margin: 20px;
+                margin: 0;
+                background-color: #f5f5f5;
             }
 
-            h1 {
+            /* Sticky header */
+            header {
+                position: sticky;
+                top: 0;
+                background-color: #faefc3; /* Lys gylden farve */
+                padding: 20px;
                 text-align: center;
+                font-size: 28px;
+                font-weight: 700;
+                font-family: "Playfair Display", serif; /* Fancy font */
+                color: white; /* Hvid tekst */
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* <-- her er skyggen */
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                z-index: 100;
             }
 
             #skeer-container {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
                 gap: 20px;
+                padding: 20px 60px;
             }
 
             .skee {
-                border: 1px solid #ccc;
+                border: 1px solid #ece5cc;
+                border-radius: 8px;
+                background-color: #fff;
                 padding: 10px;
                 text-align: center;
                 cursor: pointer;
-                transition: transform 0.2s;
+                transition:
+                    transform 0.2s,
+                    box-shadow 0.2s;
+            }
+            
+            p {
+                font-size: 20px;
+                font-weight: 700;
+                font-family: "Playfair Display", serif; /* Fancy font */
+                color: #7e7e7e; /* Hvid tekst */
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* <-- her er skyggen */
             }
 
             .skee:hover {
                 transform: scale(1.05);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             }
 
             .skee img {
-                height: 250px; /* Alle billeder får samme højde */
-                width: auto; /* Bredden justeres automatisk for at bevare proportioner */
+                height: 250px;
+                width: auto;
                 object-fit: contain;
+                margin-bottom: 10px;
+                border-radius: 4px;
             }
+            
         </style>
     </head>
     <body>
-        <h1>Min mors juleskeer af A. Michelsen</h1>
+        <header>Dine Juleskeer</header>
+
         <div id="skeer-container"></div>
 
         <script src="script.js"></script>
